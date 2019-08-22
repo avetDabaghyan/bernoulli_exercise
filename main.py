@@ -29,26 +29,42 @@ def bernoulli(p, n, k):
     c = (1-p)**(n-k)
     return a*b*c
 
-print(bernoulli(0.6,4,2)) #exactly 2 successes in 4 trials
-
-
 #with only n, prints bernoulli for values k = 0 to n
 def all_bernoulli(p, n):
+    result = [[],[]] #result[0] is x-axis, result[1] is y-axis.
+    for k in range (n+1): #k = 0, 1, ... n-1, n
+        result[0].append(k)
+        result[1].append(bernoulli(p,n,k))
+    return result
+
+def print_all_bernoulli(p, n):
     print("All bernoulli. Event p = ", p)
     print("n = ", n)
     for k in range (n+1): #k = 0, 1, ... n-1, n
         print(k, " --- ", bernoulli(p,n,k))
     print("-----")
 
-all_bernoulli(0.6,6)
-
 
 #prints bernoulli for values in between k and n.
 def at_least(p, n, least):
+    result = [[],[]]
+    for k in range(least,(n+1)): #k = least, least+1, ... n-1, n
+        result[0].append(k)
+        result[1].append(bernoulli(p,n,k))
+    return result
+
+def print_at_least(p, n, least):
     print("At least bernoulli. Event p = ", p, ", n = ", n)
     print("At least k = ", least)
     for k in range(least,(n+1)): #k = least, least+1, ... n-1, n
         print(k, " --- ", bernoulli(p,n,k))
     print("-----")
 
-at_least(0.6,6,4)
+#Gonna try to use this as a module. First, put all the calls in here:
+if __name__ == "__main__":
+    print("Basic bernoulli: ",bernoulli(0.6,4,2))
+    # print(all_bernoulli(0.6,6))
+    # print_all_bernoulli(0.6,6)
+    # print(at_least(0.6,6,4))
+    # print_at_least(0.6,6,4)
+##so that these don't happen on import. only when ran as script.
