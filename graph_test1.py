@@ -1,6 +1,6 @@
 #using matplotlib.pyplot
 import matplotlib.pyplot as plt
-import main
+import bernoulli
 
 #This is from a tutorial.
 # # x axis values
@@ -22,8 +22,8 @@ import main
 # # function to show the plot
 # plt.show()
 
-result1 = main.all_bernoulli(0.55,15)
-# result1 = main.at_least(0.55,300,100)
+result1 = bernoulli.all_bernoulli(0.55,15)
+# result1 = bernoulli.at_least(0.55,300,100)
 x = result1[0]
 y = result1[1]
 
