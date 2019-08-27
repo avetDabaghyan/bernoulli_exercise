@@ -54,10 +54,16 @@ def at_least(p, n, least):
     return result
 
 def print_at_least(p, n, least):
-    print("At least bernoulli. Event p = ", p, ", n = ", n)
-    print("At least k = ", least)
-    for k in range(least,(n+1)): #k = least, least+1, ... n-1, n
-        print(k, " --- ", bernoulli(p,n,k))
+    result = 0
+    print("At least bernoulli. Event p =", p, ", n =", n)
+    print("At least k =", least)
+    print("Probabilities of k, k+1, k+2, ... n-1, n")
+    for k in range(least,(n+1)):
+        berntemp = bernoulli(p,n,k) #k = least, least+1, ... n-1, n
+        print(k, " --- ", berntemp)
+        result = result + berntemp
+    print("")
+    print("Probability of at least " + str(least) + " successes is the sum: " + str(result))
     print("-----")
 
 #Gonna try to use this as a module. First, put all the calls in here:
@@ -66,5 +72,12 @@ if __name__ == "__main__":
     # print(all_bernoulli(0.6,6))
     # print_all_bernoulli(0.6,6)
     # print(at_least(0.6,6,4))
-    # print_at_least(0.6,6,4)
+    print_at_least(1/3,7,3)
 ##so that these don't happen on import. only when ran as script.
+
+
+
+# todo:
+# merge the printing and array-collecting functions together.
+# add a (least < n) condition for at_least
+# make another calculator for non-bernoulli/changing trials?

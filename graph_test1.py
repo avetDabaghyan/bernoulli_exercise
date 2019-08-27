@@ -22,8 +22,8 @@ import bernoulli
 # # function to show the plot
 # plt.show()
 
-result1 = bernoulli.all_bernoulli(0.55,15)
-# result1 = bernoulli.at_least(0.55,300,100)
+#result1 = bernoulli.all_bernoulli(0.55,15)
+result1 = bernoulli.at_least(0.71,30,10)
 x = result1[0]
 y = result1[1]
 
