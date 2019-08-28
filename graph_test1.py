@@ -2,6 +2,27 @@
 import matplotlib.pyplot as plt
 import bernoulli
 
+##Tutorial example below.
+
+result1 = bernoulli.all_bernoulli(0.22,70)
+##result1 = bernoulli.at_least(0.71,30,10)
+x = result1[0]
+y = result1[1]
+
+
+plt.plot(x,y)
+plt.xlabel("x - k. ")
+plt.ylabel("y - probability of k number of successes.")
+
+plt.show()
+
+
+
+# todo:
+#make functions for each all_bernoulli and at_least.
+
+
+##------
 #This is from a tutorial.
 # # x axis values
 # x = [1,2,3]
@@ -21,14 +42,3 @@ import bernoulli
 #
 # # function to show the plot
 # plt.show()
-
-#result1 = bernoulli.all_bernoulli(0.55,15)
-result1 = bernoulli.at_least(0.71,30,10)
-x = result1[0]
-y = result1[1]
-
-plt.plot(x,y)
-plt.xlabel("x - k. ")
-plt.ylabel("y - probability of k number of successes.")
-
-plt.show()
